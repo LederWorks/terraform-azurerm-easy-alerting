@@ -3,13 +3,13 @@
 module easy-alerting-aks {
     count   = var.AKSAlertsEnabled == false ? 0 : 1
     source  = "LederWorks/easy-alerting-aks/azurerm"
-    version = var.AKSAlertsVersion
+    version = "0.0.3"
 
     #SubscriptionID
     SubscriptionID      = var.SubscriptionID
 
     #Tags
-    Tags                = var.Tags
+    Tags                = local.tags
 
     #AKS Alerts
     AKSResourceGroupObject  = var.AKSResourceGroupObject
@@ -24,7 +24,7 @@ module easy-alerting-aks {
     AKSAlertContainerCPUPercentageAutoResolve   = var.AKSAlertContainerCPUPercentageAutoResolve
     AKSAlertContainerCPUPercentageThreshold     = var.AKSAlertContainerCPUPercentageThreshold
     AKSAlertContainerCPUPercentageNameSpaces    = var.AKSAlertContainerCPUPercentageNameSpaces
-    AKSAlertContainerCPUPercentageActionGroupIDs = vsr.AKSAlertContainerCPUPercentageActionGroupIDs
+    AKSAlertContainerCPUPercentageActionGroupIDs = var.AKSAlertContainerCPUPercentageActionGroupIDs
 
     #Container Memory
     AKSAlertContainerMemoryPercentageCreated = var.AKSAlertContainerMemoryPercentageCreated
