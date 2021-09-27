@@ -1,9 +1,6 @@
-formatter: "" # this is required
-
-version: ""
+formatter: "markdown document" # this is required
 
 header-from: main.tf
-footer-from: ""
 
 sections:
   hide: []
